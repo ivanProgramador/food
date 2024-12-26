@@ -5,6 +5,8 @@ import { Banner } from "../components/banner";
 import { Search } from "../components/search";
 import { Section } from "../components/section";
 import { TrendingFoods } from "../components/trending";
+import { Restaurants } from "../components/trending/restaurants";
+import { RestaurantVerticalList } from "../components/list";
 
 //pegando o tamanho da barra de status do dispositivo de forma automática
 const statusBarHeight = Constants.statusBarHeight;
@@ -21,20 +23,33 @@ export default function Index() {
         <Banner />
         <Search />
       </View>
+
       <Section
-        name="comidas em alta"
+        name="Comidas em alta"
         label="Veja mais"
         action={() => console.log("Clicou no veja mais")}
         size="text-lg"
       />
+
+      <TrendingFoods />
+
       <Section
-        name="Famosos no devfood"
-        label="Veja todas"
+        name="Famosos no dev food"
+        label="Veja todos"
         action={() => console.log("Clicou no famosos")}
         size="text-xl"
       />
 
-      <TrendingFoods />
+      <Restaurants />
+
+      <Section
+        name="Restaurantes"
+        label="Veja todos"
+        action={() => console.log("Clicou no famosos")}
+        size="text-xl"
+      />
+
+      <RestaurantVerticalList />
     </ScrollView>
   );
 }
